@@ -1,0 +1,2 @@
+function oldSchoolClick(){alert("I have been clicked")}
+window.addEventListener("DOMContentLoaded",()=>{const btn2=document.getElementById("btn2");btn2.onclick=function(){alert("I have been clicked")};function step3Handler(){alert("I have been clicked")}const btn3=document.getElementById("btn3");btn3.addEventListener("click",step3Handler);btn3.addEventListener("click",function(){alert("I have been clicked (anonymous callback)")})});
