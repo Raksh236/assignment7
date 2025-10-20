@@ -1,53 +1,7 @@
-// STEP 1
-function halfNumber(num) {
-    const result = num / 2;
-    console.log(`Half of ${num} is ${result}.`);
-    return result;
-}
-
-// STEP 2
-function squareNumber(num) {
-    const result = num * num;
-    console.log(`The result of squaring the number ${num} is ${result}.`);
-    return result;
-}
-
-// STEP 3
-function percentOf(num1, num2) {
-    const result = (num1 / num2) * 100;
-    console.log(`${num1} is ${result}% of ${num2}.`);
-    return result;
-}
-
-// STEP 4
-function findModulus(num1, num2) {
-    const result = num2 % num1;
-    console.log(`${result} is the modulus of ${num1} and ${num2}.`);
-    return result;
-}
-
-// STEP 5
-// Function that collects numbers from the user via prompt,
-// then calculates and logs the total sum.
-function sumNumbers() {
-    const input = prompt("Enter numbers separated by commas (e.g., 5, 10, 15):");
-    const nums = input.split(","); // Split string into array
-    let sum = 0;
-
-    for (let i = 0; i < nums.length; i++) {
-        const n = parseFloat(nums[i].trim()); // Convert string to number safely
-        if (!isNaN(n)) {
-            sum += n;
-        }
-    }
-
-    console.log(`The sum of [${nums.join(", ")}] is ${sum}.`);
-    return sum;
-}
-
-// ----- Sample calls for testing -----
-halfNumber(10);
-squareNumber(4);
-percentOf(2, 8);
-findModulus(4, 10);
-sumNumbers(); // <-- This one opens the prompt when you load the page
+function halfNumber(n){const r=Number(n)/2;console.log(`Half of ${n} is ${r}.`);return r}
+function squareNumber(n){const a=Number(n),r=a*a;console.log(`The result of squaring the number ${a} is ${r}.`);return r}
+function percentOf(p,w){const a=Number(p),b=Number(w),r=a/b*100;console.log(`${a} is ${r}% of ${b}.`);return r}
+function findModulus(f,s){const a=Number(f),b=Number(s),r=a%b;console.log(`${r} is the modulus of ${a} and ${b}.`);return r}
+function sum(){let t=0;for(let i=0;i<arguments.length;i++){const n=Number(arguments[i]);if(!Number.isNaN(n))t+=n}return t}
+function promptAndSum(){const input=prompt("Enter numbers separated by commas (e.g. 1, 2, 3.5, -4):","");if(input===null){console.log("Prompt cancelled.");return null}const nums=input.split(",").map(s=>s.trim()).filter(Boolean).map(Number);const total=sum.apply(null,nums);console.log(`You entered: [${nums.join(", ")}] — The sum is ${total}.`);return total}
+halfNumber(5);squareNumber(3);percentOf(2,4);findModulus(10,4);
